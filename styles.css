@@ -152,7 +152,11 @@ img{max-width:100%;display:block}
 .svc-media{position:relative;aspect-ratio:16/10;overflow:hidden}
 .svc-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.05);transition:.4s ease}
 .svc-card:hover .svc-media img{transform:scale(1.06)}
-.svc-num{position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;font-family:"Saira Condensed",sans-serif;font-weight:800;font-size:14px;padding:5px 11px;border-radius:5px;letter-spacing:1px}
+.svc-num{position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;font-family:"Saira Condensed",sans-serif;font-weight:800;font-size:14px;padding:5px 11px;border-radius:5px;letter-spacing:1px;z-index:2}
+.svc-media.product{background:#fff}
+.svc-media.product img{object-fit:contain;padding:14px;filter:none;transition:transform .4s ease}
+.svc-media.placeholder{background:radial-gradient(120% 120% at 30% 20%,#20242b,#141619);display:grid;place-items:center}
+.svc-media.placeholder .ph-ico{width:66px;height:66px;color:var(--accent);opacity:.8}
 .svc-body{padding:22px 22px 26px}
 .svc-body h3{font-size:23px;letter-spacing:.6px;margin-bottom:8px}
 .svc-body p{margin:0;font-size:15.5px;color:var(--ink-muted)}
@@ -160,7 +164,7 @@ img{max-width:100%;display:block}
 /* ---------- ABOUT ---------- */
 .about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
 .about-media{position:relative}
-.about-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);filter:saturate(.85) contrast(1.05)}
+.about-media img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius-lg);filter:saturate(.85) contrast(1.05)}
 .about-tag{position:absolute;bottom:-18px;right:-14px;background:var(--accent);color:#fff;padding:16px 22px;border-radius:8px;box-shadow:var(--shadow)}
 .about-tag b{font-family:"Saira Condensed",sans-serif;font-size:30px;display:block;line-height:1}
 .about-tag span{font-size:12px;letter-spacing:2px;text-transform:uppercase}
@@ -240,13 +244,13 @@ img{max-width:100%;display:block}
 .foot-bottom a:hover{color:var(--accent)}
 
 /* ---------- INTRO OVERLAY ---------- */
-#intro{position:fixed;inset:0;z-index:200;background:var(--ink);display:grid;place-items:center;transition:opacity .7s ease,visibility .7s}
+#intro{position:fixed;inset:0;z-index:200;background:#fff;display:grid;place-items:center;transition:opacity .7s ease,visibility .7s}
 #intro.gone{opacity:0;visibility:hidden}
 .intro-logo{text-align:center;color:#fff}
 .intro-logo .mark{width:66px;height:66px;border-radius:10px;background:var(--accent);display:grid;place-items:center;margin:0 auto 16px;animation:spin 1.1s ease}
 .intro-logo .mark svg{width:38px;height:38px;color:#fff}
 .intro-logo b{font-family:"Saira Condensed",sans-serif;font-size:30px;letter-spacing:1px;text-transform:uppercase;display:block}
-.intro-bar{width:120px;height:3px;background:var(--line);border-radius:2px;margin:18px auto 0;overflow:hidden}
+.intro-bar{width:120px;height:3px;background:#e4e0d8;border-radius:2px;margin:18px auto 0;overflow:hidden}
 .intro-bar i{display:block;height:100%;width:0;background:var(--accent);animation:load 1.1s ease forwards}
 @keyframes spin{from{transform:rotate(-160deg) scale(.6);opacity:0}to{transform:rotate(0) scale(1);opacity:1}}
 @keyframes load{to{width:100%}}
@@ -301,3 +305,35 @@ img{max-width:100%;display:block}
   .reveal{transition:none;opacity:1;transform:none}
   #intro{display:none}
 }
+
+/* brand logo images */
+.brand-logo{height:42px;width:auto;display:block;background:#fff;padding:5px 11px;border-radius:8px}
+.foot-brand .brand-logo{height:50px;display:inline-block}
+.intro-logo-img{width:min(74vw,420px);height:auto;display:block;margin:0 auto 20px}
+
+/* trust bullet list (3rd trust item) */
+.trust-list{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:5px}
+.trust-list li{position:relative;padding-left:18px;font-size:14.5px;color:var(--muted);line-height:1.4}
+.trust-list li::before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;background:var(--accent);border-radius:2px}
+
+/* brands strip */
+.brand-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.brand-tile{background:#fff;border-radius:8px;display:grid;place-items:center;padding:14px;aspect-ratio:3/2;transition:.2s ease}
+.brand-tile:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.brand-tile img{max-width:100%;max-height:52px;width:auto;height:auto;object-fit:contain;filter:none}
+@media(max-width:900px){.brand-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.brand-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* footer brands strip */
+.foot-brands{padding:26px 0 4px;margin-top:8px}
+.foot-brands-label{display:block;font-family:"Saira Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--muted);margin-bottom:14px}
+.foot-brands-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.foot-brands-row img{height:32px;width:auto;background:#fff;padding:5px 9px;border-radius:6px;object-fit:contain}
+
+/* gallery — uniform grid */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery figure{margin:0;aspect-ratio:4/3;overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.gallery img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s ease,filter .4s ease}
+.gallery figure:hover img{transform:scale(1.05)}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gallery{grid-template-columns:1fr}}
