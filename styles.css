@@ -164,7 +164,7 @@ img{max-width:100%;display:block}
 /* ---------- ABOUT ---------- */
 .about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
 .about-media{position:relative}
-.about-media img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;border-radius:var(--radius-lg);filter:saturate(.85) contrast(1.05)}
+.about-media img{width:100%;height:auto;display:block;border-radius:var(--radius-lg);filter:saturate(.85) contrast(1.05)}
 .do-it-all{font-family:"Saira Condensed",sans-serif;font-weight:800;font-size:clamp(26px,3vw,34px);letter-spacing:.5px;color:var(--accent);margin:6px 0 24px;text-transform:uppercase}
 .about-tag{position:absolute;bottom:-18px;right:-14px;background:var(--accent);color:#fff;padding:16px 22px;border-radius:8px;box-shadow:var(--shadow)}
 .about-tag b{font-family:"Saira Condensed",sans-serif;font-size:30px;display:block;line-height:1}
