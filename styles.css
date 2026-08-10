@@ -163,7 +163,7 @@ img{max-width:100%;display:block}
 
 /* ---------- ABOUT ---------- */
 .about-head{max-width:760px;margin-bottom:44px}
-.about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.about-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:48px;align-items:center}
 .about-grid p:first-child{margin-top:0}
 .about-media{position:relative}
 .about-media img{width:100%;height:auto;display:block;border-radius:var(--radius-lg);filter:saturate(.85) contrast(1.05)}
