@@ -162,7 +162,7 @@ img{max-width:100%;display:block}
 .svc-body p{margin:0;font-size:15.5px;color:var(--ink-muted)}
 
 /* ---------- ABOUT ---------- */
-.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
 .about-media{position:relative}
 .about-media img{width:100%;height:auto;display:block;border-radius:var(--radius-lg);filter:saturate(.85) contrast(1.05)}
 .do-it-all{font-family:"Saira Condensed",sans-serif;font-weight:800;font-size:clamp(26px,3vw,34px);letter-spacing:.5px;color:var(--accent);margin:6px 0 24px;text-transform:uppercase}
