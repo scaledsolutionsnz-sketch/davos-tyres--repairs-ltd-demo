@@ -13,15 +13,30 @@
   }
 
   // ---- hero rotation ----
-  var slides = document.querySelectorAll('.hero-slide');
-  if(slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    var i = 0;
+  // Landscape slides show on desktop, portrait on mobile; rotate only the
+  // visible set so hidden slides never leave the hero blank.
+  var mobileMq = window.matchMedia('(max-width: 640px)');
+  function activeSlides(){
+    var sel = mobileMq.matches ? '.hero-slide.port' : '.hero-slide.land';
+    return document.querySelectorAll(sel);
+  }
+  function resetSlides(){
+    document.querySelectorAll('.hero-slide').forEach(function(s){ s.classList.remove('active'); });
+    var set = activeSlides();
+    if(set.length) set[0].classList.add('active');
+    return set;
+  }
+  var slides = resetSlides();
+  var i = 0;
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     setInterval(function(){
+      if(slides.length < 2) return;
       slides[i].classList.remove('active');
       i = (i + 1) % slides.length;
       slides[i].classList.add('active');
     }, 5500);
   }
+  mobileMq.addEventListener('change', function(){ slides = resetSlides(); i = 0; });
 
   // ---- mobile nav ----
   var burger = document.querySelector('.hamburger');
